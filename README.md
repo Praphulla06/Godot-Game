@@ -11,4 +11,5 @@ This game was made following Brackey's tutorial on youtube.
 - Added acceleration and deceleration (friction).
 
 
-![image](https://github.com/Praphulla06/Godot-Game/assets/155335759/946fd090-6ca0-40ac-9c55-03e4b5fc6944)
+![image](https://github.com/Praphulla06/Godot-Game/assets/155335759/3c59acbd-c4cf-44d3-bb52-1a86198345ba)
+
