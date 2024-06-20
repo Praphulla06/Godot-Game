@@ -4,6 +4,7 @@ const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 const FRICTION = 8.5
 const ACCELERATION = 15
+const DASH_CONSTANT = 2.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var has_double_jumped = false
@@ -40,7 +41,9 @@ func _physics_process(delta):
 		animated_sprite.flip_h = false
 	elif direction < 0:
 		animated_sprite.flip_h = true
-		
+	
+	
+	
 	# animations
 	if is_on_floor():
 		if direction == 0:
@@ -49,6 +52,9 @@ func _physics_process(delta):
 			animated_sprite.play("run")	
 	else:
 		animated_sprite.play("jump")
+		
+	if Input.is_action_just_pressed("dash"):
+		velocity.x *= DASH_CONSTANT	
 		
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION )
